@@ -1,69 +1,86 @@
-<!doctype html>
-<a href="index.html" class="logo">AfriGlam</a>
-<button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
-<nav class="site-nav" id="siteNav">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Home — AfriGlam</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<!-- header same as index (copy/paste or include when using templates) -->
+		<header class="site-header">
+			<div class="container header-inner">
+				<a href="index.html" class="logo">AfriGlam</a>
+				<button
+					id="navToggle"
+					class="nav-toggle"
+					aria-label="Toggle navigation"
+				>
+					☰
+				</button>
+				<nav class="site-nav" id="siteNav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="services.html">Services</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 
+		<main>
+			<section class="hero">
+				<div class="container hero-inner">
+					<h1>Vibrant fashion — African-inspired design</h1>
+					<p>We create modern, bold fashion that tells a story.</p>
+					<p><a class="btn" href="services.html">View Services</a></p>
+				</div>
+			</section>
 
-<main>
-<section class="hero">
-<div class="container hero-inner">
-<h1>Vibrant fashion — African-inspired design</h1>
-<p>We create modern, bold fashion that tells a story.</p>
-<p><a class="btn" href="services.html">View Services</a></p>
-</div>
-</section>
+			<section class="features container">
+				<h2>Featured Work</h2>
+				<div class="grid" id="featureGrid">
+					<article class="card reveal">
+						<img src="images/work1.jpg" alt="Work 1" />
+						<h3>Collection Launch</h3>
+						<p>Bold prints and modern cuts.</p>
+					</article>
+					<article class="card reveal">
+						<img src="images/work2.jpg" alt="Work 2" />
+						<h3>Custom Tailoring</h3>
+						<p>Made-to-measure pieces.</p>
+					</article>
+					<article class="card reveal">
+						<img src="images/work3.jpg" alt="Work 3" />
+						<h3>Brand Collabs</h3>
+						<p>Strategic design partnerships.</p>
+					</article>
+				</div>
+			</section>
 
+			<section class="newsletter container reveal">
+				<h2>Stay in the loop</h2>
+				<form id="newsletterForm">
+					<input
+						type="email"
+						id="newsletterEmail"
+						placeholder="Your email"
+						required
+					/>
+					<button type="submit" class="btn">Subscribe</button>
+				</form>
+				<p id="newsletterMsg" class="muted"></p>
+			</section>
+		</main>
 
-<section class="features container">
-<h2>Featured Work</h2>
-<div class="grid" id="featureGrid">
-<article class="card reveal">
-<img src="images/work1.jpg" alt="Work 1">
-<h3>Collection Launch</h3>
-<p>Bold prints and modern cuts.</p>
-</article>
-<article class="card reveal">
-<img src="images/work2.jpg" alt="Work 2">
-<h3>Custom Tailoring</h3>
-<p>Made-to-measure pieces.</p>
-</article>
-<article class="card reveal">
-<img src="images/work3.jpg" alt="Work 3">
-<h3>Brand Collabs</h3>
-<p>Strategic design partnerships.</p>
-</article>
-</div>
-</section>
+		<footer class="site-footer">
+			<div class="container">
+				<p>© <span id="year"></span> AfriGlam — Celebrating African style.</p>
+				<p class="social">Follow: <a href="#">IG</a> · <a href="#">X</a></p>
+			</div>
+		</footer>
 
-
-<section class="newsletter container reveal">
-<h2>Stay in the loop</h2>
-<form id="newsletterForm">
-<input type="email" id="newsletterEmail" placeholder="Your email" required>
-<button type="submit" class="btn">Subscribe</button>
-</form>
-<p id="newsletterMsg" class="muted"></p>
-</section>
-</main>
-
-
-<footer class="site-footer">
-<div class="container">
-<p>© <span id="year"></span> AfriGlam — Celebrating African style.</p>
-<p class="social">Follow: <a href="#">IG</a> · <a href="#">X</a></p>
-</div>
-</footer>
-
-
-<script src="js/script.js"></script>
-</body>
+		<script src="js/script.js"></script>
+	</body>
 </html>

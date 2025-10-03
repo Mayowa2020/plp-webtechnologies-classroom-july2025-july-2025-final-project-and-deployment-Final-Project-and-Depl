@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Services — AfriGlam</title>
-<link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<header class="site-header">
-<div class="container header-inner">
-<a href="index.html" class="logo">AfriGlam</a>
-<button id="navToggle3" class="nav-toggle" aria-label="Toggle navigation">☰</button>
-<nav class="site-nav" id="siteNav3">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="services.html" class="active">Services</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>AfriGlam — Services</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container header-inner">
+				<a class="logo" href="index.html">AfriGlam</a>
+				<button
+					class="nav-toggle"
+					aria-controls="siteNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					☰
+				</button>
+				<nav id="siteNav" class="site-nav" aria-label="Main navigation">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="services.html" class="active">Services</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 
+		<main class="container">
+			<section class="services-grid reveal">
+				<h1>Our Services</h1>
+				<div class="grid">
+					<div class="card">
+						<h3>Design Consultancy</h3>
+						<p>Brand-led fashion design and strategy.</p>
+					</div>
+					<div class="card">
+						<h3>Custom Tailoring</h3>
+						<p>Bespoke garments made to fit.</p>
+					</div>
+					<div class="card">
+						<h3>Workshops</h3>
+						<p>Community and corporate workshops on textiles.</p>
+					</div>
+				</div>
+			</section>
+		</main>
 
-<main class="container">
-<section class="services-grid reveal">
-<h1>Our Services</h1>
-<div class="grid">
-<div class="card">
-<h3>Design Consultancy</h3>
-<p>Brand-led fashion design and strategy.</p>
-</div>
-<div class="card">
-<h3>Custom Tailoring</h3>
-<p>Bespoke garments made to fit.</p>
-</div>
-<div class="card">
-<h3>Workshops</h3>
-<p>Community and corporate workshops on textiles.</p>
-</div>
-</div>
-</section>
-</main>
+		<footer class="site-footer">
+			<div class="container">
+				<p>© <span id="year3"></span> AfriGlam</p>
+			</div>
+		</footer>
 
-
-<footer class="site-footer">
-<div class="container">
-<p>© <span id="year3"></span> AfriGlam</p>
-</div>
-</footer>
-
-
-<script src="js/script.js"></script>
-</body>
+		<script src="js/script.js"></script>
+	</body>
 </html>

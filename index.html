@@ -1,132 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>AfriGlam — Home</title>
-		<link rel="stylesheet" href="css/styles.css" />
-	</head>
-	<body>
-		<header class="site-header">
-			<div class="container header-inner">
-				<a class="logo" href="index.html">AfriGlam</a>
-				<button
-					class="nav-toggle"
-					aria-controls="siteNav"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					☰
-				</button>
-				<nav id="siteNav" class="site-nav" aria-label="Main navigation">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="services.html">Services</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AfriGlam — Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">AfriGlam</a>
+      <button class="nav-toggle" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav id="siteNav" class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-		<main>
-			<section class="hero">
-				<div class="container hero-inner">
-					<h1>Vibrant fashion — African-inspired design</h1>
-					<p>We create modern, bold fashion that tells a story.</p>
-					<p><a class="btn" href="services.html">View Services</a></p>
-				</div>
-			</section>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Vibrant fashion — African-inspired design</h1>
+        <p>We create modern, bold fashion that tells a story.</p>
+        <p><a class="btn" href="services.html">View Services</a></p>
+      </div>
+    </section>
 
-			<section class="features container">
-				<h2>Featured Work</h2>
-				<div class="grid" id="featureGrid">
-					<article class="card reveal">
-						<picture>
-							<source
-								type="image/webp"
-								srcset="
-									images/work1-600.webp   600w,
-									images/work1-1200.webp 1200w
-								"
-							/>
-							<img
-								src="images/portrait-beautiful-african-american-woman-having-fun-village-suburbian-outdoor-portrait_230311-45183.jpg"
-								alt="African Woman in Ankara - Showcase bold prints and modern cuts"
-								loading="lazy"
-								width="600"
-								height="400"
-							/>
-						</picture>
-						<h3>Collection Launch</h3>
-						<p>Bold prints and modern cuts.</p>
-					</article>
+    <section class="features container">
+      <h2>Featured Work</h2>
+      <div class="grid" id="featureGrid">
+        <article class="card reveal">
+          <picture>
+            <source type="image/webp" srcset="images/work1-600.webp 600w, images/work1-1200.webp 1200w">
+            <img src="images/work1-600.jpg" alt="Collection Launch" loading="lazy" width="600" height="400">
+          </picture>
+          <h3>Collection Launch</h3>
+          <p>Bold prints and modern cuts.</p>
+        </article>
 
-					<article class="card reveal">
-						<picture>
-							<source
-								type="image/webp"
-								srcset="
-									images/work2-600.webp   600w,
-									images/work2-1200.webp 1200w
-								"
-							/>
-							<img
-								src="images/Tailor at work.jpg"
-								alt="Custom Tailoring - Behind-the-scenes tailoring, hands-on, intimate and authentic"
-								loading="lazy"
-								width="600"
-								height="400"
-							/>
-						</picture>
-						<h3>Custom Tailoring</h3>
-						<p>Made-to-measure pieces.</p>
-					</article>
+        <article class="card reveal">
+          <picture>
+            <source type="image/webp" srcset="images/work2-600.webp 600w, images/work2-1200.webp 1200w">
+            <img src="images/work2-600.jpg" alt="Custom Tailoring" loading="lazy" width="600" height="400">
+          </picture>
+          <h3>Custom Tailoring</h3>
+          <p>Made-to-measure pieces.</p>
+        </article>
 
-					<article class="card reveal">
-						<picture>
-							<source
-								type="image/webp"
-								srcset="
-									images/work3-600.webp   600w,
-									images/work3-1200.webp 1200w
-								"
-							/>
-							<img
-								src="images/two-african-dressmaker-woman-designed-new-red-dress-mannequin-tailor-office-black-seamstress-girls.jpg"
-								alt="Brand Collabs - Two or more people collaborating, modern workspace, professional look - Show partnerships and collaboration"
-								loading="lazy"
-								width="600"
-								height="400"
-							/>
-						</picture>
-						<h3>Brand Collabs</h3>
-						<p>Strategic design partnerships.</p>
-					</article>
-				</div>
-			</section>
+        <article class="card reveal">
+          <picture>
+            <source type="image/webp" srcset="images/work3-600.webp 600w, images/work3-1200.webp 1200w">
+            <img src="images/work3-600.jpg" alt="Brand Collabs" loading="lazy" width="600" height="400">
+          </picture>
+          <h3>Brand Collabs</h3>
+          <p>Strategic design partnerships.</p>
+        </article>
+      </div>
+    </section>
 
-			<section class="newsletter container reveal">
-				<h2>Stay in the loop</h2>
-				<form id="newsletterForm">
-					<input
-						type="email"
-						id="newsletterEmail"
-						placeholder="Your email"
-						required
-					/>
-					<button type="submit" class="btn">Subscribe</button>
-				</form>
-				<p id="newsletterMsg" class="muted"></p>
-			</section>
-		</main>
+    <section class="newsletter container reveal">
+      <h2>Stay in the loop</h2>
+      <form id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="Your email" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <p id="newsletterMsg" class="muted"></p>
+    </section>
+  </main>
 
-		<footer class="site-footer">
-			<div class="container">
-				<p>© <span id="year"></span> AfriGlam — Celebrating African style.</p>
-			</div>
-		</footer>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> AfriGlam — Celebrating African style.</p>
+    </div>
+  </footer>
 
-		<script src="js/script.js"></script>
-	</body>
+  <script src="js/script.js"></script>
+</body>
 </html>

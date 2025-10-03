@@ -3,22 +3,22 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>About — AfriGlam</title>
+		<title>AfriGlam — About</title>
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
-		<!-- header same as index (copy/paste or include when using templates) -->
 		<header class="site-header">
 			<div class="container header-inner">
-				<a href="index.html" class="logo">AfriGlam</a>
+				<a class="logo" href="index.html">AfriGlam</a>
 				<button
-					id="navToggle2"
 					class="nav-toggle"
+					aria-controls="siteNav"
+					aria-expanded="false"
 					aria-label="Toggle navigation"
 				>
 					☰
 				</button>
-				<nav class="site-nav" id="siteNav2">
+				<nav id="siteNav" class="site-nav" aria-label="Main navigation">
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="about.html" class="active">About</a></li>

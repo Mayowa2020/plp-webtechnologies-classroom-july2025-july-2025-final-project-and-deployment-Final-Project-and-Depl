@@ -1,23 +1,22 @@
-// js/script.js
+// js/script.js - navigation, reveal, and form handlers
 document.addEventListener("DOMContentLoaded", () => {
-	// accessible nav toggle
-	const navToggleButtons = document.querySelectorAll(".nav-toggle");
-	navToggleButtons.forEach((btn) => {
+	// Nav toggle (accessible)
+	document.querySelectorAll(".nav-toggle").forEach((btn) => {
 		btn.addEventListener("click", () => {
-			// prefer nav inside same header
+			// find nearest nav in header
 			const header = btn.closest(".header-inner") || document;
 			let nav = header.querySelector(".site-nav");
 			if (!nav) nav = document.querySelector(".site-nav");
 			if (!nav) return;
-			const open = nav.classList.toggle("open");
-			btn.setAttribute("aria-expanded", open ? "true" : "false");
+			const isOpen = nav.classList.toggle("open");
+			btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
 		});
 	});
 
-	// set current year(s)
-	document.querySelectorAll('[id^="year"]').forEach((el) => {
-		el.textContent = new Date().getFullYear();
-	});
+	// set years
+	document
+		.querySelectorAll('[id^="year"]')
+		.forEach((el) => (el.textContent = new Date().getFullYear()));
 
 	// reveal on scroll (IntersectionObserver or fallback)
 	if ("IntersectionObserver" in window) {
@@ -31,18 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
 		);
 		document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 	} else {
-		// fallback
-		const revealOnScroll = () => {
+		const onScroll = () => {
 			document.querySelectorAll(".reveal").forEach((el) => {
 				const rect = el.getBoundingClientRect();
 				if (rect.top < window.innerHeight - 80) el.classList.add("active");
 			});
 		};
-		window.addEventListener("scroll", revealOnScroll);
-		revealOnScroll();
+		window.addEventListener("scroll", onScroll);
+		onScroll();
 	}
 
-	// newsletter form handler
+	// newsletter handler (simple client-side)
 	const newsletterForm = document.getElementById("newsletterForm");
 	if (newsletterForm) {
 		newsletterForm.addEventListener("submit", (e) => {
@@ -50,15 +48,15 @@ document.addEventListener("DOMContentLoaded", () => {
 			const email = document.getElementById("newsletterEmail");
 			const msg = document.getElementById("newsletterMsg");
 			if (!email.value || !/\S+@\S+\.\S+/.test(email.value)) {
-				msg.textContent = "Please enter a valid email.";
+				msg.textContent = "Please enter a valid email address.";
 				return;
 			}
-			msg.textContent = "Thanks! You are subscribed.";
+			msg.textContent = "Thanks — you are subscribed!";
 			email.value = "";
 		});
 	}
 
-	// contact form (client-side simulation)
+	// contact form (client-side validation simulation)
 	const contactForm = document.getElementById("contactForm");
 	if (contactForm) {
 		contactForm.addEventListener("submit", (e) => {
@@ -83,4 +81,3 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 });
-// end of script.js

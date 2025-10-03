@@ -23,15 +23,18 @@
 						<li><a href="index.html">Home</a></li>
 						<li><a href="about.html">About</a></li>
 						<li><a href="services.html">Services</a></li>
-						<li><a href="contact.html" class="active">Contact</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="contact.html" aria-current="page">Contact</a></li>
 					</ul>
 				</nav>
 			</div>
 		</header>
 
-		<main class="container reveal">
-			<h1>Contact Us</h1>
-			<form id="contactForm" class="contact-form">
+		<main class="container">
+			<h1 class="reveal">Contact</h1>
+			<p class="reveal">Send us a message — we’d love to collaborate.</p>
+
+			<form id="contactForm" class="contact-form reveal" novalidate>
 				<label for="name">Name</label>
 				<input id="name" name="name" required />
 
@@ -42,7 +45,7 @@
 				<textarea id="message" name="message" rows="6" required></textarea>
 
 				<button type="submit" class="btn">Send Message</button>
-				<p id="contactMsg" class="muted"></p>
+				<p id="contactMsg" class="muted" aria-live="polite"></p>
 			</form>
 		</main>
 

@@ -1,0 +1,51 @@
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-header, .site-footer {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+}
+.site-nav {
+  display: none;
+}
+.site-nav.open {
+  display: block;
+}
+.site-nav a {
+  margin: 0 0.5rem;
+  color: #fff;
+  text-decoration: none;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+form input, form textarea {
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem;
+}
+form button {
+  padding: 0.5rem 1rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

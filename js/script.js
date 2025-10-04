@@ -1,63 +1,60 @@
-// js/script.js
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.nav-toggle').forEach(btn => {
+  // nav toggle for small screens
+  const toggles = document.querySelectorAll('.nav-toggle');
+  toggles.forEach(btn => {
     btn.addEventListener('click', () => {
-      const nav = btn.nextElementSibling;
-      if (nav) nav.classList.toggle('open');
+      const nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+      btn.setAttribute('aria-expanded', nav.style.display === 'block');
     });
   });
 
-  document.querySelectorAll('[id^=year]').forEach(el => el.textContent = new Date().getFullYear());
+  // set year
+  document.querySelectorAll('[id^="year"]').forEach(el => el.textContent = new Date().getFullYear());
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('active');
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // reveal on scroll
+  const revealElems = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+    }, {threshold:0.12});
+    revealElems.forEach(el => obs.observe(el));
+  } else {
+    const onScroll = () => {
+      revealElems.forEach(el => {
+        const r = el.getBoundingClientRect();
+        if(r.top < window.innerHeight - 80) el.classList.add('active');
+      });
+    };
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  }
 
-  const newsletterForm = document.getElementById('newsletterForm');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', e => {
+  // newsletter
+  const newsletter = document.getElementById('newsletterForm');
+  if(newsletter){
+    newsletter.addEventListener('submit', (e) => {
       e.preventDefault();
       const email = document.getElementById('newsletterEmail');
       const msg = document.getElementById('newsletterMsg');
-      if (!email.value || !/\S+@\S+\.\S+/.test(email.value)) {
+      if(!email.value || !/\S+@\S+\.\S+/.test(email.value)){
         msg.textContent = 'Please enter a valid email.';
         return;
       }
-      msg.textContent = 'Thanks! You are subscribed.';
-      email.value = '';
+      msg.textContent = 'Thanks — you are subscribed!';
+      newsletter.reset();
     });
   }
 
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', e => {
+  // contact form simulation
+  const contact = document.getElementById('contactForm');
+  if(contact){
+    contact.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('name');
-      const email = document.getElementById('email');
-      const message = document.getElementById('message');
-      const out = document.getElementById('contactMsg');
-
-      if (!name.value.trim() || !/\S+@\S+\.\S+/.test(email.value) || !message.value.trim()) {
-        out.textContent = 'Please fill all fields correctly.';
-        return;
-      }
-      out.textContent = 'Sending...';
-      setTimeout(() => {
-        out.textContent = 'Message sent — we will reply soon.';
-        contactForm.reset();
-      }, 800);
+      alert('Thank you — we received your message!');
+      contact.reset();
     });
   }
-
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const id = a.getAttribute('href').slice(1);
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
 });

@@ -1,51 +1,80 @@
-/* style.css */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+
+/* Afro-Chic Responsive Styles - Option 1 palette */
+:root{
+  --primary: #D72638; /* rich red */
+  --accent: #F7B801;  /* golden yellow */
+  --hover: #009688;   /* teal */
+  --text: #2E2E2E;    /* charcoal */
+  --bg: #F9F9F9;      /* light neutral */
+  --card-radius: 12px;
+  --container: 1100px;
+  --gap: 1rem;
 }
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;background:var(--bg);color:var(--text);line-height:1.5;}
+
+/* container */
+.container{width:calc(100% - 2rem);max-width:var(--container);margin:0 auto;padding:1rem}
+
+/* header */
+.site-header{background:var(--primary);color:#fff;position:sticky;top:0;z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--gap);padding:.75rem 1rem;max-width:var(--container);margin:0 auto}
+.logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.25rem}
+.nav-toggle{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.12);color:#fff;padding:.35rem .6rem;border-radius:6px;cursor:pointer}
+.site-nav{display:none}
+.site-nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+.site-nav a{color:#fff;text-decoration:none;font-weight:700;padding:.25rem .5rem;border-radius:6px}
+.site-nav a:hover{background:rgba(255,255,255,0.06)}
+
+/* hero */
+.hero{padding:2.5rem 0;background:linear-gradient(180deg, rgba(215,38,56,0.06), transparent)}
+.hero-inner{display:grid;grid-template-columns:1fr;gap:1.25rem;align-items:center;max-width:1100px;margin:0 auto;padding:1rem}
+.hero h1{font-size:clamp(1.6rem,4.5vw,2.6rem);margin-bottom:.5rem;color:var(--text)}
+.lead{color:rgba(46,46,46,0.85);margin-bottom:1rem}
+.hero-media img{width:100%;height:auto;border-radius:10px;display:block;}
+
+/* buttons */
+.btn{display:inline-block;background:var(--accent);color:#111;padding:.6rem 1rem;border-radius:10px;text-decoration:none;font-weight:700}
+.btn:hover{background:var(--hover);color:#fff}
+
+/* sections */
+.section-title{font-size:1.125rem;margin-bottom:.75rem}
+.features{padding:1.5rem 0}
+
+/* grid/cards */
+.grid{display:grid;gap:1rem;grid-template-columns:1fr}
+.card{background:#fff;border-radius:var(--card-radius);box-shadow:0 8px 24px rgba(0,0,0,0.06);overflow:hidden}
+.card img{width:100%;height:220px;object-fit:cover;display:block}
+.card-content{padding:1rem}
+.card h3{margin:0 0 .5rem}
+.card p{color:rgba(46,46,46,0.75);margin:0}
+
+/* form */
+.newsletter-form, .contact-form{display:flex;flex-direction:column;gap:.6rem;max-width:480px}
+input[type="email"], input[type="text"], textarea{padding:.65rem;border:1px solid #e6e6e6;border-radius:8px}
+
+/* footer */
+.site-footer{background:var(--primary);color:#fff;padding:1rem 0;margin-top:2rem;text-align:center}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(12px);transition:all .6s ease-out}
+.reveal.active{opacity:1;transform:none}
+
+/* responsive */
+@media(min-width:640px){
+  .site-nav{display:block}
+  .nav-toggle{display:none}
+  .hero-inner{grid-template-columns:1fr 420px;align-items:center;padding:2rem}
+  .grid{grid-template-columns:repeat(2,1fr)}
 }
-.site-header, .site-footer {
-  background: #333;
-  color: #fff;
-  padding: 1rem;
+
+@media(min-width:980px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .card img{height:200px}
+  .hero h1{font-size:clamp(2rem,3.2vw,3rem)}
 }
-.site-nav {
-  display: none;
-}
-.site-nav.open {
-  display: block;
-}
-.site-nav a {
-  margin: 0 0.5rem;
-  color: #fff;
-  text-decoration: none;
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-form input, form textarea {
-  display: block;
-  margin-bottom: 1rem;
-  width: 100%;
-  max-width: 400px;
-  padding: 0.5rem;
-}
-form button {
-  padding: 0.5rem 1rem;
-  background: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
+
+/* accessibility */
+a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(0,150,136,0.12);outline-offset:3px}

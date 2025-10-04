@@ -1,69 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>AfriGlam | Home</title>
-		<link rel="stylesheet" href="css/styles.css" />
-		<script defer src="js/script.js"></script>
-	</head>
-	<body>
-		<header class="site-header">
-			<div class="container header-inner">
-				<a href="index.html" class="logo">AfriGlam</a>
-				<button class="nav-toggle" aria-expanded="false">☰</button>
-				<nav class="site-nav">
-					<ul>
-						<li><a href="index.html" class="active">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="services.html">Services</a></li>
-						<li><a href="gallery.html">Gallery</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AfriGlam — Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">AfriGlam</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+      <nav class="site-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-		<section class="hero">
-			<div class="container hero-inner">
-				<h1>Celebrating African Culture & Style</h1>
-				<p>
-					AfriGlam brings bold, vibrant, and elegant African-inspired fashion to
-					the world.
-				</p>
-				<a href="gallery.html" class="btn">View Collection</a>
-				<picture>
-					<source srcset="images/portrait.webp" type="image/webp" />
-					<img
-						src="images/portrait.jpg"
-						alt="African Woman in African Prints"
-						class="reveal"
-					/>
-				</picture>
-			</div>
-		</section>
+  <main>
+    <section class="hero reveal">
+      <div class="hero-inner container">
+        <div class="hero-text">
+          <h1>Bold. Vibrant. AfriGlam.</h1>
+          <p class="lead">Celebrating African heritage through modern fashion — handcrafted pieces with heart.</p>
+          <p><a class="btn" href="gallery.html">Explore the Collection</a></p>
+        </div>
+        <div class="hero-media">
+          <img src="images/portrait.jpg" alt="Portrait wearing AfriGlam prints" loading="lazy" width="1200" height="800">
+        </div>
+      </div>
+    </section>
 
-		<section class="features container grid">
-			<article class="card reveal">
-				<picture>
-					<source srcset="images/tailor.webp" type="image/webp" />
-					<img src="images/tailor.jpg" alt="Tailor at Work" />
-				</picture>
-				<h3>Custom Tailoring</h3>
-				<p>Made-to-measure pieces crafted for perfection.</p>
-			</article>
-			<article class="card reveal">
-				<picture>
-					<source srcset="images/dressmakers.webp" type="image/webp" />
-					<img src="images/dressmakers.jpg" alt="Dressmakers" />
-				</picture>
-				<h3>Design Collaboration</h3>
-				<p>Strategic design partnerships for unique styles.</p>
-			</article>
-		</section>
+    <section class="features container reveal" id="features">
+      <h2 class="section-title">Featured Work</h2>
+      <div class="grid">
+        <article class="card reveal">
+          <img src="images/tailor.jpg" alt="Tailor at work">
+          <div class="card-content">
+            <h3>Custom Tailoring</h3>
+            <p>Made-to-measure pieces — precision, quality, and a perfect fit.</p>
+          </div>
+        </article>
 
-		<footer class="site-footer">
-			<p>&copy; 2025 AfriGlam. All Rights Reserved.</p>
-		</footer>
-	</body>
+        <article class="card reveal">
+          <img src="images/dressmakers.jpg" alt="Dressmakers">
+          <div class="card-content">
+            <h3>Design Collaboration</h3>
+            <p>Collaborative creations with designers and local artisans.</p>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <img src="images/gallery1.jpg" alt="Fashion showcase">
+          <div class="card-content">
+            <h3>Collection Launch</h3>
+            <p>Seasonal collections that blend tradition and contemporary style.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter container reveal">
+      <h2>Stay Updated</h2>
+      <form id="newsletterForm" class="newsletter-form">
+        <input id="newsletterEmail" type="email" placeholder="Your email" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <p id="newsletterMsg" class="muted" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> AfriGlam — Celebrating African style.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
 </html>

@@ -1,6 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>AfriGlam — Contact</title><link rel="stylesheet" href="css/styles.css"/></head><body>
-<header class="site-header"><div class="header-inner"><a class="logo" href="index.html">AfriGlam</a><button class="nav-toggle" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="site-nav" id="mainNav"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul></nav></div></header>
-<main class="container reveal"><section class="contact"><h1>Contact</h1><form id="contactForm"><input type="text" placeholder="Your Name" required><input type="email" placeholder="Your Email" required><textarea placeholder="Your Message" rows="6" required></textarea><button type="submit" class="btn">Send Message</button></form></section></main>
-<footer class="site-footer"><div class="container"><p>© <span id="year4"></span> AfriGlam</p></div></footer><script src="js/script.js"></script></body></html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>AfriGlam — Contact</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="logo" href="index.html">AfriGlam</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="mainNav" type="button">Menu</button>
+            <nav class="site-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container reveal">
+        <section class="contact">
+            <h1>Contact</h1>
+            <form id="contactForm" class="contact-form" novalidate>
+                <label for="contactName" class="visually-hidden">Name</label>
+                <input id="contactName" type="text" placeholder="Your Name" required autocomplete="name" />
+                <label for="contactEmail" class="visually-hidden">Email</label>
+                <input id="contactEmail" type="email" placeholder="Your Email" required autocomplete="email" />
+                <label for="contactMsg" class="visually-hidden">Message</label>
+                <textarea id="contactMsg" placeholder="Your Message" rows="6" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> AfriGlam</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

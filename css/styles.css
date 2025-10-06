@@ -1,80 +1,496 @@
-
 /* Afro-Chic Responsive Styles - Option 1 palette */
-:root{
-  --primary: #D72638; /* rich red */
-  --accent: #F7B801;  /* golden yellow */
-  --hover: #009688;   /* teal */
-  --text: #2E2E2E;    /* charcoal */
-  --bg: #F9F9F9;      /* light neutral */
-  --card-radius: 12px;
-  --container: 1100px;
-  --gap: 1rem;
+:root {
+	--primary: #d72638; /* rich red */
+	--accent: #f7b801; /* golden yellow */
+	--hover: #009688; /* teal */
+	--text: #2e2e2e; /* charcoal */
+	--bg: #f9f9f9; /* light neutral */
+	--card-radius: 12px;
+	--container: 1100px;
+	--gap: 1rem;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;background:var(--bg);color:var(--text);line-height:1.5;}
+.visually-hidden {
+    border: 0 !important;
+    clip: rect(1px,1px,1px,1px) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+html,
+body {
+	height: 100%; /* ensure viewport height is available */
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh; /* full viewport height */
+}
+
+/* Main content must be able to grow to push footer down */
+main {
+	flex: 1 0 auto; /* grow and take remaining space */
+	/* optional: add a little top/bottom padding so content doesn't touch edges */
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+/* Ensure footer styles are preserved but not fixed */
+.site-footer {
+	/* keep existing visual styles (background, color, padding) */
+	/* ensure it doesn't overlap content */
+	flex-shrink: 0;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+		sans-serif;
+	background: var(--bg);
+	color: var(--text);
+	line-height: 1.5;
+}
 
 /* container */
-.container{width:calc(100% - 2rem);max-width:var(--container);margin:0 auto;padding:1rem}
-
-/* header */
-.site-header{background:var(--primary);color:#fff;position:sticky;top:0;z-index:50}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--gap);padding:.75rem 1rem;max-width:var(--container);margin:0 auto}
-.logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.25rem}
-.nav-toggle{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.12);color:#fff;padding:.35rem .6rem;border-radius:6px;cursor:pointer}
-.site-nav{display:none}
-.site-nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
-.site-nav a{color:#fff;text-decoration:none;font-weight:700;padding:.25rem .5rem;border-radius:6px}
-.site-nav a:hover{background:rgba(255,255,255,0.06)}
-
-/* hero */
-.hero{padding:2.5rem 0;background:linear-gradient(180deg, rgba(215,38,56,0.06), transparent)}
-.hero-inner{display:grid;grid-template-columns:1fr;gap:1.25rem;align-items:center;max-width:1100px;margin:0 auto;padding:1rem}
-.hero h1{font-size:clamp(1.6rem,4.5vw,2.6rem);margin-bottom:.5rem;color:var(--text)}
-.lead{color:rgba(46,46,46,0.85);margin-bottom:1rem}
-.hero-media img{width:100%;height:auto;border-radius:10px;display:block;}
-
-/* buttons */
-.btn{display:inline-block;background:var(--accent);color:#111;padding:.6rem 1rem;border-radius:10px;text-decoration:none;font-weight:700}
-.btn:hover{background:var(--hover);color:#fff}
-
-/* sections */
-.section-title{font-size:1.125rem;margin-bottom:.75rem}
-.features{padding:1.5rem 0}
-
-/* grid/cards */
-.grid{display:grid;gap:1rem;grid-template-columns:1fr}
-.card{background:#fff;border-radius:var(--card-radius);box-shadow:0 8px 24px rgba(0,0,0,0.06);overflow:hidden}
-.card img{width:100%;height:220px;object-fit:cover;display:block}
-.card-content{padding:1rem}
-.card h3{margin:0 0 .5rem}
-.card p{color:rgba(46,46,46,0.75);margin:0}
-
-/* form */
-.newsletter-form, .contact-form{display:flex;flex-direction:column;gap:.6rem;max-width:480px}
-input[type="email"], input[type="text"], textarea{padding:.65rem;border:1px solid #e6e6e6;border-radius:8px}
-
-/* footer */
-.site-footer{background:var(--primary);color:#fff;padding:1rem 0;margin-top:2rem;text-align:center}
-
-/* reveal animation */
-.reveal{opacity:0;transform:translateY(12px);transition:all .6s ease-out}
-.reveal.active{opacity:1;transform:none}
-
-/* responsive */
-@media(min-width:640px){
-  .site-nav{display:block}
-  .nav-toggle{display:none}
-  .hero-inner{grid-template-columns:1fr 420px;align-items:center;padding:2rem}
-  .grid{grid-template-columns:repeat(2,1fr)}
+.container {
+	width: calc(100% - 2rem);
+	max-width: var(--container);
+	margin: 0 auto;
+	padding: 1rem;
 }
 
-@media(min-width:980px){
-  .grid{grid-template-columns:repeat(3,1fr)}
-  .card img{height:200px}
-  .hero h1{font-size:clamp(2rem,3.2vw,3rem)}
+/* header */
+.site-header {
+	background: var(--primary);
+	color: #fff;
+	position: sticky;
+	top: 0;
+	z-index: 50;
+}
+.header-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--gap);
+	padding: 0.75rem 1rem;
+	max-width: var(--container);
+	margin: 0 auto;
+}
+.logo {
+	font-weight: 800;
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.25rem;
+}
+.nav-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	color: #fff;
+	padding: 0.35rem 0.6rem;
+	border-radius: 6px;
+	cursor: pointer;
+}
+.site-nav {
+	display: none;
+}
+.site-nav ul {
+	list-style: none;
+	display: flex;
+	gap: 1rem;
+	margin: 0;
+	padding: 0;
+}
+.site-nav a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+	padding: 0.25rem 0.5rem;
+	border-radius: 6px;
+}
+.site-nav a:hover {
+	background: rgba(255, 255, 255, 0.06);
+}
+
+/* hero */
+.hero {
+	padding: 2.5rem 0;
+	background: linear-gradient(180deg, rgba(215, 38, 56, 0.06), transparent);
+}
+.hero-inner {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.25rem;
+	align-items: center;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+.hero h1 {
+	font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+	margin-bottom: 0.5rem;
+	color: var(--text);
+}
+.lead {
+	color: rgba(46, 46, 46, 0.85);
+	margin-bottom: 1rem;
+}
+.hero-media img {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	display: block;
+}
+
+/* buttons */
+.btn {
+	display: inline-block;
+	background: var(--accent);
+	color: #111;
+	padding: 0.6rem 1rem;
+	border-radius: 10px;
+	text-decoration: none;
+	font-weight: 700;
+}
+.btn:hover {
+	background: var(--hover);
+	color: #fff;
+}
+
+/* sections */
+.section-title {
+	font-size: 1.125rem;
+	margin-bottom: 0.75rem;
+}
+.features {
+	padding: 1.5rem 0;
+}
+
+/* grid/cards */
+.grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 1fr;
+}
+.card {
+	background: #fff;
+	border-radius: var(--card-radius);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+	overflow: hidden;
+}
+.card img {
+	width: 100%;
+	height: 220px;
+	object-fit: cover;
+	display: block;
+}
+.card-content {
+	padding: 1rem;
+}
+.card h3 {
+	margin: 0 0 0.5rem;
+}
+.card p {
+	color: rgba(46, 46, 46, 0.75);
+	margin: 0;
+}
+
+/* form */
+.newsletter-form,
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	max-width: 480px;
+}
+input[type="email"],
+input[type="text"],
+textarea {
+	padding: 0.65rem;
+	border: 1px solid #e6e6e6;
+	border-radius: 8px;
+}
+
+/* footer */
+.site-footer {
+	background: var(--primary);
+	color: #fff;
+	padding: 1rem 0;
+	margin-top: 2rem;
+	text-align: center;
+}
+
+/* reveal animation */
+.reveal {
+	opacity: 0;
+	transform: translateY(12px);
+	transition: all 0.6s ease-out;
+}
+.reveal.active {
+	opacity: 1;
+	transform: none;
+}
+
+/* responsive */
+@media (min-width: 640px) {
+	.site-nav {
+		display: block;
+	}
+	.nav-toggle {
+		display: none;
+	}
+	.hero-inner {
+		grid-template-columns: 1fr 420px;
+		align-items: center;
+		padding: 2rem;
+	}
+	.grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 980px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.card img {
+		height: 200px;
+	}
+	.hero h1 {
+		font-size: clamp(2rem, 3.2vw, 3rem);
+	}
 }
 
 /* accessibility */
-a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(0,150,136,0.12);outline-offset:3px}
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+	outline: 3px solid rgba(0, 150, 136, 0.12);
+	outline-offset: 3px;
+}
+
+/* -----------------------
+  Responsive fixes (mobile-first)
+  Paste at end of css/styles.css
+   ----------------------- */
+
+/* Ensure container is not too narrow on small screens */
+.container {
+	width: calc(100% - 2rem);
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+/* Header/nav adjustments */
+.header-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.75rem 1rem;
+	flex-wrap: wrap; /* allow wrapping for very small screens */
+}
+
+/* Nav links default hidden on small screens, toggled by .site-nav.show */
+.site-nav {
+	display: none;
+	width: 100%;
+}
+.site-nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+.nav-toggle {
+	display: inline-flex;
+	cursor: pointer;
+}
+
+/* Make nav show when .site-nav.show is applied (JS toggle) */
+.site-nav.show {
+	display: block;
+}
+.site-nav.show ul {
+	flex-direction: column;
+	gap: 0.5rem;
+	align-items: flex-start;
+}
+
+/* Hero tweaks for small screens */
+.hero {
+	padding: 2rem 0;
+}
+.hero-inner {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	align-items: center;
+	padding: 1rem 0;
+}
+
+/* Grid & cards: stack on small screens */
+.grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 1fr;
+}
+.card {
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* Card image scaling */
+.card img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+/* Contact / newsletter forms responsive */
+.newsletter-form,
+.contact-form,
+form#contactForm {
+	width: 100%;
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	align-items: stretch;
+	margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Style the submit button full width on small screens */
+button[type="submit"],
+.btn {
+	width: 100%;
+	max-width: 420px;
+	margin-top: 0.25rem;
+	padding: 0.75rem 1rem;
+	border-radius: 8px;
+}
+
+/* Footer spacing */
+.site-footer {
+	padding: 1.25rem 1rem;
+	text-align: center;
+}
+
+/* Large screens: restore multi-column layouts */
+@media (min-width: 640px) {
+	.nav-toggle {
+		display: none;
+	}
+	.site-nav {
+		display: block !important;
+		width: auto;
+	}
+	.site-nav ul {
+		flex-direction: row;
+		align-items: center;
+	}
+	.hero-inner {
+		grid-template-columns: 1fr 420px;
+		gap: 2rem;
+	}
+	.grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.newsletter-form,
+	.contact-form {
+		flex-direction: row;
+		gap: 0.75rem;
+		align-items: center;
+	}
+	.newsletter-form input[type="email"] {
+		flex: 1;
+	}
+	.newsletter-form .btn {
+		width: auto;
+	}
+	form#contactForm input[type="text"],
+	form#contactForm input[type="email"] {
+		width: calc(50% - 0.5rem);
+	}
+	form#contactForm textarea {
+		width: 50%;
+	}
+}
+
+@media (min-width: 980px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	form#contactForm input[type="text"],
+	form#contactForm input[type="email"] {
+		width: calc(50% - 1rem);
+	}
+	form#contactForm textarea {
+		width: calc(50% - 1rem);
+	}
+	button[type="submit"] {
+		max-width: 220px;
+	}
+}
+
+/* small visual improvements */
+.card {
+	transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.card:hover {
+	transform: translateY(-6px);
+}
+
+/* Sticky footer layout (flex-based) --------------------------------- */
+/* Put this early in the file or right after your :root variables. */
+html,
+body {
+	height: 100%; /* ensure viewport height is available */
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh; /* full viewport height */
+}
+
+/* Main content must be able to grow to push footer down */
+main {
+	flex: 1 0 auto; /* grow and take remaining space */
+	/* optional: add a little top/bottom padding so content doesn't touch edges */
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+/* Ensure footer styles are preserved but not fixed */
+.site-footer {
+	/* keep existing visual styles (background, color, padding) */
+	/* ensure it doesn't overlap content */
+	flex-shrink: 0;
+}
